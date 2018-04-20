@@ -1,0 +1,487 @@
+.around{
+  width: 100px;
+  border-radius: 100px;
+}
+.clear{
+  clear: both;
+}
+a:link {
+  -webkit-tap-highlight-color: black;
+}
+a:active {
+background: white;
+color:#fff;
+text-decoration:none;
+}
+
+
+body{
+  font-size: 62.5%;/* 1em = 10px */
+  margin: 0 auto;
+  padding: 0;
+}
+h2, h3, h4, footer p, header{
+  text-align: center;
+  margin: 0;
+  font-family:'Ubuntu', sans-serif;
+}
+header{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size:cover;
+  position: relative;
+}
+header::before{
+  /* 透過した黒を重ねる */
+  background-color: rgba(0,0,0,0.5);
+  /* どの範囲に重ねるかを指定 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+}
+
+h1{
+  font-size: 4.5em;
+  margin: 0;
+  margin-bottom: 1em;
+  color: white;
+  position: relative;
+  z-index: 1;
+}/* titile */
+h4{
+  font-size: 2em;
+  text-align: center;
+  margin: 0 0 1em 0;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+h2{
+  font-size: 4em;
+  margin: 1em;
+  position: relative;
+
+}/* heading */
+
+h2:after{
+  content:"";
+  position: absolute;
+  background: black;
+  width: 1em;
+  height: .1em;
+  bottom: -50%;
+  right: 50%;
+  transform: translate(50%,0%);
+}
+
+h3{
+  font-size: 2.5em;
+  margin: 3em;
+}/* sub-heading */
+p{
+  font-size: 1.6em;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 1em;
+  font-family:'Ubuntu', sans-serif;
+}
+
+.fa{
+  font-size: 6em;
+  color: white;
+  position: fixed;
+  right: .3em;
+  top: .3em;
+  cursor : pointer;
+  z-index: 9999;
+  -webkit-transition: all 2s; /* Safari */
+  transition: all .5s;
+}
+
+.nav{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+  padding: 0;
+  z-index: 9998;
+  display: none;
+}
+
+.nav li{
+  text-align: center;
+  font-size: 2.5em;
+  z-index: 9999;
+  font-family:'Ubuntu', sans-serif;
+  margin: 1em;
+}
+
+
+
+li a {
+  color: white;
+  text-decoration: white;
+}
+
+.nav ul{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
+}
+
+
+section{
+}
+
+#prof{
+  display: block;
+  margin: 1em auto;
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container{
+  width: 99%;
+  margin: 0 auto;
+  z-index: 1;
+  transition: all 0.5s;
+}
+
+
+#work .container{
+  text-align: center;
+  position:relative;
+  z-index: 1;
+}
+.overlay img{
+  width: 100%;
+}
+.overlay{
+  max-width: 360px;
+  width: 90%;
+  margin: 1em auto;
+  display: inline-block;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+  cursor : pointer;
+  position: relative;
+}
+
+.mask{
+  width: 100%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  display: none;
+  opacity: 0.8;
+}
+
+.mask h5{
+  color: white;
+  font-size: 3em;
+  margin: 0.5em 0em;
+}
+
+.mask p{
+  opacity: 1;
+  background: white;
+  color: black;
+  line-height: 1.5em;
+}
+.mask ul{
+  opacity: 1;
+  width: 50%;
+  font-size: 2em;
+  color: white;
+  text-align: left;
+}
+
+.mask ul li{
+  margin: 0.5em;
+}
+
+/* skills */
+
+#skill .container{
+  text-align: center;
+}
+
+.category{
+  width: 360px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.category:hover{
+  width: 360px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.bar{
+  background: silver;
+  width: 90%;
+  height: 30px;
+  margin:1em auto;
+  position: relative;
+  border-radius: 100px;
+}
+
+.bar_over{
+/* for js */
+  width: 0%;
+  transition: all .5s;
+}
+
+.bar_over_0{
+  width: 0%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  border-radius: 100px;
+}
+
+.bar_over_20{
+  width: 20%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  border-radius: 100px;
+}
+.bar_over_40{
+  width: 40%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  border-radius: 100px;
+}
+.bar_over_60{
+  width: 60%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  border-radius: 100px;
+}
+.bar_over_80{
+  width: 80%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  border-radius: 100px;
+}
+.bar_over_100{
+  width: 100%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  border-radius: 100px;
+}
+
+h6{
+  margin: 20px;
+  font-size: 20px;
+}
+h7{
+  margin: 0;
+  background: white;
+  font-size: 15px;
+}
+/* section 3rd */
+#timeline .container{
+  margin-top: 100px;
+}
+
+
+/* section 4 */
+#contact{
+  width: 100%;
+  height: 100vh;
+}
+#contact .container{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0%,-50%);
+  transform: translate(0%,-50%);
+  font-size: 1em;
+}
+#contact p{
+  text-align: center;
+  cursor : pointer;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+}
+#contact a{
+  text-decoration: none;
+}
+
+#contact p:hover{
+  color: gold;
+}
+
+footer{
+  background: black;
+  color: white;
+}
+
+/* svg */
+.svgWrap{
+  fill : none;
+  stroke :  #000000;
+  stroke-linecap : round;
+  stroke-linejoin : round;
+  stroke-miterlimit: 10;
+}
+/* controlled by Js */
+.opacity{
+  opacity:0;
+}
+
+
+/* svg */
+.path {
+  stroke: #000;
+  fill: white;
+  stroke-width: .5;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+}
+
+.startSign{
+  animation: DASH 3.2s ease-in-out alternate 0s forwards;
+  -webkit-animation: DASH 3.2s ease-in-out 0s forwards;
+  animation: DASH 3.2s ease-in-out 0s forwards;
+}
+
+.path2 {
+  animation-delay: 0.4s;
+}
+ 
+.path3 {
+  animation-delay: 0.8s;
+}
+ 
+.path4 {
+  animation-delay: 1.2s;
+}
+ 
+.path5 {
+  animation-delay: 1.7s;
+}
+
+.path6 {
+  animation-delay: 2.2s;
+}
+ 
+.path7 {
+  animation-delay: 2.7s;
+}
+ 
+.path8 {
+  animation-delay: 3.2s;
+}
+ 
+.path9 {
+  animation-delay: 3.7s;
+}
+
+.path10 {
+  animation-delay: 4.2s;
+}
+
+.path11 {
+  animation-delay: 4.7s;
+}
+
+.path12 {
+  animation-delay: 5.2s;
+}
+
+.path13 {
+  animation-delay: 5.7s;
+}
+
+@keyframes DASH {
+  0% {
+    stroke-dashoffset: 5000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-moz-keyframes DASH {
+  0% {
+    stroke-dashoffset: 5000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes DASH {
+  0% {
+    stroke-dashoffset: 5000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* tablet */
+@media screen and (min-width: 480px) {
+
+  body{
+  }
+}/* tablet-end */
+
+/* desktop */
+@media screen and (min-width: 768px) {
+
+body{
+}
+
+h1{
+  font-size: 5em;
+}
+.container{
+  width: 80%;
+}
+
+#about .container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1260px;
+}
+#about .container p{
+  margin: 30px;
+  width: 60%;
+}
+
+#about .container img{
+  max-width: 300px;
+}
+.nav li{
+  font-size: 3em;
+  margin: 2em;
+}
+
+#contact p{
+  text-align: center;
+  cursor : pointer;
+  font-size: 4em;
+  color: black;
+}
+
+#contact p:active{
+  color: gold;
+}
+
