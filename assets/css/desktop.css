@@ -1,0 +1,78 @@
+@media screen and (min-width: 768px) {
+  body{
+    background: red;
+  }
+
+  .cover{
+    width: 80%;
+  }
+/* works */
+  #work .container{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .cardBox{
+    width: 30%;
+    margin-bottom: 3em;
+  }
+  .cardBox:nth-of-type(n+4) {
+    margin-bottom: 0em;
+  }
+
+/* about */
+  #about .container{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #about img{
+    width: 200px;
+    height: 200px;
+  }
+  .prof{
+    background: red;
+  }
+
+  .prof_text{
+    width: 50%;
+    background: green;
+  }
+
+  #about .socialIcon{
+    background: red;
+    text-align: right;
+    font-size: 3.5em;
+  }
+
+
+  /* skill */
+
+  #skill .container{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .category{
+    width: 28%;
+    margin-bottom: 3em;
+  }
+
+
+
+
+
+
+}
