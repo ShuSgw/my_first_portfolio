@@ -1,5 +1,11 @@
 @import url("https://use.fontawesome.com/releases/v5.0.13/css/all.css");
 
+/* for pararax */
+.opacity{
+  opacity: 0;
+  transform: translate(50px, 100px);
+}
+
 ul{
   margin: 0;
 }
@@ -40,6 +46,7 @@ body{
   font-size: 62.5%;/* 1em = 10px */
   margin: 0 auto;
   padding: 0;
+  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p, a{
@@ -47,6 +54,9 @@ h1, h2, h3, h4, h5, h6, p, a{
   margin: 0;
 }
 
+.container{
+  transition: all .5s ease-out;
+}
 /* whole links */
 a:link { color: black; }
 a:visited { color:black; }
@@ -68,10 +78,10 @@ header{
   justify-content: center;
   background-size:cover;
   position: relative;
-  background-image: url('../img/header.jpg');
   background-size: cover;
   background-position: 55% top;
   position: relative;
+  background-attachment: fixed;
 }
 
 header::before{
@@ -97,11 +107,11 @@ header::before{
 
 .fixed{
   position: fixed;
-  top: 1%;
-  left: 50%;
   transform: translate(-50%,0%);
   -webkit-transform: translate(-50%,0%);
   -moz-transform: translate(-50%,0%);
+  top: 1%;
+  left: 50%;
 }
 
 .logo{
@@ -147,22 +157,22 @@ header::before{
   position: absolute;
   top: 50%;
   transform: translate(0%,-50%);
+  -webkit-transform: translate(0%,-50%);
 }
 
 
 /* section */
 section{
-  background: pink;
   margin: 0 auto;
 }
 
 section:last-of-type {
-  background: purple;
   padding-bottom: 100px;
 }
 
 .cover{
   width: 90%;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
@@ -196,7 +206,6 @@ h2{
 h3{
   font-size: 3em;
   position: relative;
-  background: yellow;
   padding: 50px 0 50px 0;
 }
 /* Line */
@@ -222,7 +231,6 @@ h3:after{
 
 .overlay{
   width: 100%;
-  background: red;
   margin: 0 auto;
   display: inline-block;
   cursor : pointer;
@@ -231,7 +239,106 @@ h3:after{
 
 .cardBox{
   margin-bottom: 5em;
+  transition: all .5s ease-in;
 }
+
+/* cardBox枠 */
+a {
+  display: inline-block;
+  color: #3498db;
+  text-decoration: none;
+}
+.button {
+  border: 1px solid #eee;
+  position: relative;
+}
+/* Effect1
+ *************************************** */
+/* 擬似要素の共通スタイル */
+.change-border01::after,
+.change-border01::before,
+.change-border01__inner::after,
+.change-border01__inner::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 10;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+}
+.orange::after,
+.orange::before,
+.orange::after,
+.orange::before {
+  background-color: orange;
+}
+.skyblue::after,
+.skyblue::before,
+.skyblue::after,
+.skyblue::before {
+  background-color: #1E90FF;
+}
+.cadetblue::after,
+.cadetblue::before,
+.cadetblue::after,
+.cadetblue::before {
+  background-color: #5F9EA0;
+}
+.purple::after,
+.purple::before,
+.purple::after,
+.purple::before {
+  background-color: purple;
+}
+
+.strongPink::after,
+.strongPink::before,
+.strongPink::after,
+.strongPink::before {
+  background-color: #FF0461;
+}
+
+/* 左上へ配置 */
+.change-border01::after {
+    height: 7px;
+    left: -1px;
+    top: -1px;
+    width: 0px;
+}
+/* 右下へ配置 */
+.change-border01::before {
+  bottom: -1px;
+  height: 7px;
+  right: -1px;
+  width: 0px;
+}
+/* 左下へ配置 */
+.change-border01__inner::after {
+  bottom: -1px;
+  height: 0px;
+  left: -1px;
+  width: 7px;
+}
+/* 右下へ配置 */
+.change-border01__inner::before {
+  height: 0px;
+  right: -1px;
+  top: -1px;
+  width: 7px;
+}
+
+/* hover */
+.change-border01:hover::after,
+.change-border01:hover::before {
+  width: 100%;
+  width: calc(100% + 1px);
+}
+.change-border01:hover .change-border01__inner::after,
+.change-border01:hover .change-border01__inner::before {
+  height: 100%;
+  height: calc(100% + 1px);
+}
+/* な */
 
 .cardBox:last-of-type{
   margin-bottom: 0em;
@@ -273,15 +380,21 @@ h3:after{
   margin-bottom: 1.2em;
 }
 #about .socialIcon{
-  background: red;
   font-size: 3.5em;
-  text-align: left;
+  text-align: right;
+}
+#about .fab{
+  color: black;
+  transition: all .1s ease;
+}
+#about .fab:hover{
+  color: silver;
 }
 /* skills */
 /* skills sub-headings */
 h5{
   font-size: 2em;
-  margin: .1em 0 1em 0;
+  margin: 1em 0 1em 0;
 }
 
 h5:first-of-type {
@@ -290,7 +403,6 @@ h5:first-of-type {
 
 /* names of skills */
 h6{
-  background: red;
   font-size: 1.5em;
   padding: 7px 0 7px 0;
 }
@@ -302,7 +414,7 @@ h6:first-of-type {
 
 .bar{
   margin: 0;
-  background: silver;
+  background: grey;
   width: 100%;
   height: 20px;
   margin: 0 auto;
@@ -312,7 +424,7 @@ h6:first-of-type {
 .bar_over{
 /* for js */
   width: 0%;
-  transition: all .5s;
+  transition: all 1.5s ease-out;
 }
 
 .bar_over_0{
@@ -361,13 +473,13 @@ h6:first-of-type {
 #contact p{
   padding-bottom: 2em
 }
-.mail a{
+.btn a{
   font-size: .5em;
 }
-.mail{
+.btn{
   width: 250px;
   height: 50px;
-  background:skyblue;
+  background:silver;
   border-radius:5px;
   display: flex;
   justify-content: center; /*左右中央揃え*/
@@ -378,25 +490,33 @@ h6:first-of-type {
   opacity: 0.9;
   margin: 0 auto;
 }
-.mail:hover{
+.btn:hover{
   opacity: 1;
-  background: red;
+  background: grey;
+  transition: all .5s;
 }
 
 
 footer{
-  background: green;
+  background: black;
   text-align: center;
 }
 
 footer .socialIcon{
-  padding: .9em 0 1.1em 0;
+  padding: .9em 0 0 0;
   font-size: 2.3em;
-  background: red;
+}
+footer .fab{
+  color: white;
+}
+footer .fab:hover{
+  color: grey;
+  transition: all .5s;
 }
 footer p{
+  color: white;
   padding: 1.2em;
-  font-size: 1.8em;
+  font-size: 1.3em;
 }
 
 /* project page */
@@ -410,5 +530,62 @@ footer p{
   font-size: 37px;
   position: absolute;
   right: 0;
-  color: silver;
+  top: 0;
+  color: grey;
+}
+
+.tags__item {
+    display: inline-block;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 5px 10px 5px 28px;
+    margin: 3px 5px 3px 0;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.tags__item:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translate(0%,-50%);
+}
+
+.blue:before{
+  background: blue;
+}
+.pink:before{
+  background: pink;
+}
+.red:before{
+  background: red;
+}
+.green:before{
+  background: green;
+}
+.purple:before{
+  background: purple;
+}
+.orange:before{
+  background: orange;
+}
+.yellow:before{
+  background: yellow;
+}
+
+#deliverables img{
+  width: 100%;
+  margin-bottom: 3em;
+}
+#deliverables img:last-of-type{
+  margin-bottom: 0;
+}
+.visitWebsite{
+  margin-top: 2.5em;
 }

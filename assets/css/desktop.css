@@ -1,6 +1,5 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1100px) {
   body{
-    background: red;
   }
 
   .cover{
@@ -20,10 +19,13 @@
     width: 30%;
     margin-bottom: 3em;
   }
-  .cardBox:nth-of-type(n+4) {
+/*   .cardBox:nth-of-type(n+4) {
     margin-bottom: 0em;
-  }
-
+  } */
+/* desktopでのバグ */
+  .cardBox:last-of-type{
+  margin-bottom: 3em;
+}
 /* about */
   #about .container{
     display: -webkit-flex;
@@ -38,24 +40,19 @@
     width: 200px;
     height: 200px;
   }
-  .prof{
-    background: red;
-  }
+
 
   .prof_text{
     width: 50%;
-    background: green;
   }
 
   #about .socialIcon{
-    background: red;
     text-align: right;
     font-size: 3.5em;
   }
 
 
   /* skill */
-
   #skill .container{
     display: -webkit-flex;
     display: -moz-flex;
@@ -70,9 +67,25 @@
     margin-bottom: 3em;
   }
 
-
-
-
+/* ProjectPage */
+.tags__item {
+    display: inline-block;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 5px 10px 5px 28px;
+    margin: 3px 10px 3px 0;
+    font-size: 1.5em;
+    position: relative;
+  }
+  #deliverables img{
+    margin-bottom: 3em;
+  }
+  footer p{
+    padding: 1.2em;
+    font-size: 1.8em;
+  }
 
 
 }
