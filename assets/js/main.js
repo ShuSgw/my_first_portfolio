@@ -1,5 +1,5 @@
 $(function(){
-  $("html").animsition({
+  $("#transition").animsition({
     inClass: 'flip-in-y',
     outClass: 'flip-out-y',
     inDuration: 1000,

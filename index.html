@@ -227,7 +227,7 @@
 					 	<span id= "contact_link"></span>
 					 	<h3>Contact</h3>
 					 	<div class="container">
-					 		<p>Thank you for visiting my website.Feel free to drop me a line saying "Hello".</p>
+					 		<p>Thank you for visiting my website.Feel free to drop me a message below..</p>
 					 		<div class = "btn">
 					 			<a href= "mailto:sgw.sgw.shu@gmail.com" >Email Me</a>
 					 		</div>
@@ -265,13 +265,11 @@
 			    var contact = $("#contact").offset().top;
 
 					if(navigator.userAgent.match(/(iPhone|Android)/)){
-						top = top;
-						work = work;
-						about = about;
-						skill = skill;
+						work = work - 200;
+						about = about - 200;
+						skill = skill - 200;
 						contact = contact;
 			  	}else{
-						top = top;
 						work = work -300;
 						about = about -300;
 						skill = skill -500;

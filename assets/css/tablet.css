@@ -8,13 +8,11 @@
     flex-flow: row wrap;
     justify-content: space-between;
   }
-
   .cardBox{
-      width: 49%;
+      width: 47%;
       transition: all .5s;
   }
-  .cardBox:nth-of-type(n+5) {
-    margin-bottom: 0em;
+  .cardBox:nth-of-type(n+1) {
   }
 
 }
