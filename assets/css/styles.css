@@ -13,6 +13,7 @@ ul{
 .nav{
   position: fixed;
   top: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, .7);
@@ -93,12 +94,13 @@ header{
   background-position: 55% top;
   position: relative;
   background-attachment: fixed;
+  background-image: url('../img/header.jpg');
 }
 
 header::before{
   /* 透過した黒を重ねる */
   /* 240,248,255 */
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, .4);
   /* どの範囲に重ねるかを指定 */
   position: absolute;
   top: 0;
@@ -157,9 +159,8 @@ header::before{
   color: white;
 }
 
-#wrapper{
-  width: 90%;
-  margin: 0 auto;
+.wrapper{
+  background: white;
 }
 .nav ul{
   width: 100%;
@@ -175,7 +176,8 @@ header::before{
 
 /* section */
 section{
-  margin: 0 auto;
+  margin: 50px auto;
+  padding: 00px 0;
 }
 
 section:last-of-type {
@@ -219,7 +221,7 @@ h2{
 h3{
   font-size: 3em;
   position: relative;
-  padding: 50px 0 50px 0;
+  padding: 0 0 70px 0;
 }
 /* Line */
 h3:after{
@@ -229,7 +231,7 @@ h3:after{
   width: 2em;
   height: .09em;
   left: 0;
-  top: 70%;
+  top: 40%;
 }
 
 /* mask with js */
@@ -386,6 +388,9 @@ a {
 }
 
 /* about */
+#about{
+  padding: 50px 0;
+}
 .prof{
   border-radius: 50%;
   display: block;
@@ -424,20 +429,45 @@ h6:first-of-type {
   padding: 0px 0 7px 0;
 }
 
+#skill{
+  padding: 50px 0;
+  background-image: url(../img/header2.jpg);
+  position: relative;
+}
 
+#skill h3, #skill h5, #skill h6{
+  position: relative;
+  color: black;
+}
+
+#skill::before{
+  /* 透過した黒を重ねる */
+  /* 240,248,255 */
+  background-color: rgba(255, 255, 255, .5);
+  /* どの範囲に重ねるかを指定 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+}
 .bar{
   margin: 0;
-  background: grey;
+  background: rgba(20, 121, 155, 0.3);
   width: 100%;
-  height: 20px;
+  height: 18px;
   margin: 0 auto;
   position: relative;
+  border-radius: 20px;
 }
 
 .bar_over{
 /* for js */
   width: 0%;
   transition: all 1.5s ease-out;
+  border-radius: 20px;
+  position: relative;
 }
 
 .bar_over_0{
@@ -452,30 +482,35 @@ h6:first-of-type {
   height: 100%;
   background: black;
   position: absolute;
+  background: linear-gradient(-45deg, rgba(24, 78, 104, .8), rgba(3, 110, 217, .8))
 }
 .bar_over_40{
   width: 40%;
   height: 100%;
   background: black;
   position: absolute;
+  background: linear-gradient(-45deg, rgba(24, 78, 104, .8), rgba(3, 110, 217, .8))
 }
 .bar_over_60{
   width: 60%;
   height: 100%;
   background: black;
   position: absolute;
+  background: linear-gradient(-45deg, rgba(24, 78, 104, .8), rgba(3, 110, 217, .8))
 }
 .bar_over_80{
   width: 80%;
   height: 100%;
   background: black;
   position: absolute;
+  background: linear-gradient(-45deg, rgba(24, 78, 104, .8), rgba(3, 110, 217, .8))
 }
 .bar_over_100{
   width: 100%;
   height: 100%;
   background: black;
   position: absolute;
+  background: linear-gradient(-45deg, rgba(24, 78, 104, .8), rgba(3, 110, 217, .8))
 }
 
 /* contact */
@@ -487,12 +522,10 @@ h6:first-of-type {
   padding-bottom: 2em
 }
 .btn a{
+  color: black;
   font-size: .5em;
 }
 .btn{
-  width: 250px;
-  height: 50px;
-  background:silver;
   border-radius:5px;
   display: flex;
   justify-content: center; /*左右中央揃え*/
@@ -502,16 +535,21 @@ h6:first-of-type {
   cursor: pointer;
   opacity: 0.9;
   margin: 0 auto;
+  background: rgba(40, 134, 180, 0.9);
+  width: 280px; height: 50px;
+  border: solid rgb(40, 134, 180);
 }
+
 .btn:hover{
   opacity: 1;
-  background: grey;
   transition: all .5s;
+  background: white;
 }
+
 
 
 footer{
-  background: black;
+  background: rgb(17, 60, 81);
   text-align: center;
 }
 
@@ -538,7 +576,31 @@ footer p{
   background-image: url('../img/bc.jpg');
   background-position: 50% top;
 }
-
+.project_02{
+  height: 50vh;
+  background-image: url('../img/petFinder.jpg');
+  background-position: 50% top;
+}
+.project_03{
+  height: 50vh;
+  background-image: url('../img/sample2.jpg');
+  background-position: 100% top;
+}
+.project_04{
+  height: 50vh;
+  background-image: url('../img/sample3.jpg');
+  background-position: 100% top;
+}
+.project_05{
+  height: 50vh;
+  background-image: url('../img/sample4.jpg');
+  background-position: 100% top;
+}
+.project_06{
+  height: 50vh;
+  background-image: url('../img/sample5.jpg');
+  background-position: 100% top;
+}
 .fa-times{
   font-size: 37px;
   position: absolute;
@@ -601,4 +663,16 @@ footer p{
 }
 .visitWebsite{
   margin-top: 2.5em;
+}
+
+#loadingGif{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%,-50%);
+}
+
+#small{
+  width: 40%;
+  margin: 0 auto;
 }
