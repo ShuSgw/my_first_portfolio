@@ -72,7 +72,7 @@
       <div class="header_box">
         <h1>SHUHEI SHAGAWA
         </h1>
-        <h2>Front End Developper Based on Vancouver
+        <h2>Front End Developers Based in Vancouver
         </h2>
       </div>
       <i class="fas fa-angle-down">
@@ -123,6 +123,25 @@
           </div>
           <!-- Cardbox -->
           <!-- one work end -->
+          <div class="cardBox button change-border01 darkBlue">
+            <a href="project_04.html">
+              <div class="overlay change-border01__inner darkBlue">
+                <div class="mask">
+                  <h4>Let's Chat
+                  </h4>
+                  <p>Web Application
+                  </p>
+                </div>
+                <!-- mask -->
+                <img src="assets/img/sample3.jpg" alt="">
+              </div>
+              <!-- overlay -->
+            </a>
+            <!-- a link -->
+          </div>
+          <!-- Cardbox -->
+          <!-- one work end -->
+          <!-- one work -->
           <!-- one work -->
           <div class="cardBox button change-border01 purple">
             <a href="project_03.html">
@@ -135,25 +154,6 @@
                 </div>
                 <!-- mask -->
                 <img src="assets/img/sample2.jpg" alt="">
-              </div>
-              <!-- overlay -->
-            </a>
-            <!-- a link -->
-          </div>
-          <!-- Cardbox -->
-          <!-- one work end -->
-          <!-- one work -->
-          <div class="cardBox button change-border01 strongPink">
-            <a href="project_04.html">
-              <div class="overlay change-border01__inner strongPink">
-                <div class="mask">
-                  <h4>Simple Login Forum
-                  </h4>
-                  <p>Web Application
-                  </p>
-                </div>
-                <!-- mask -->
-                <img src="assets/img/sample3.jpg" alt="">
               </div>
               <!-- overlay -->
             </a>
@@ -221,15 +221,15 @@
               He also likes the rewarding feeling of solving problems.
             </p>
             <div class="socialIcon">
-              <a href="">
+              <a href="https://www.facebook.com/profile.php?id=100004409528820" target="_blank">
                 <i class="fab fa-facebook-f">
                 </i>
               </a>
-              <a href="">
+              <a href="https://github.com/ShuSgw" target="_blank">
                 <i class="fab fa-github">
                 </i>
               </a>
-              <a href="">
+              <a href="https://www.linkedin.com/in/shuhei-shagawa-173baa140/" target="_blank">
                 <i class="fab fa-linkedin-in">
                 </i>
               </a>
@@ -263,7 +263,7 @@
               <div class="bar_over bar_over_80">
               </div>
             </div>
-            <h6>Javascript / jQuery
+            <h6>Javascript / ES6 / jQuery
             </h6>
             <div class="bar">
               <div class="bar_over bar_over_60">
@@ -341,27 +341,27 @@
     </section>
     <footer id="footer">
       <div class="socialIcon">
-        <a href="">
+        <a href="https://www.facebook.com/profile.php?id=100004409528820" target="_blank">
           <i class="fab fa-facebook-f">
           </i>
         </a>
-        <a href="">
+        <a href="https://twitter.com/" target="_blank">
           <i class="fab fa-twitter">
           </i>
         </a>
-        <a href="">
+        <a href="https://www.instagram.com/sgw0o0/?hl=ja" target="_blank">
           <i class="fab fa-instagram">
           </i>
         </a>
-        <a href="">
+        <a href="https://github.com/ShuSgw" target="_blank">
           <i class="fab fa-github">
           </i>
         </a>
-        <a href="">
+        <a href="https://www.linkedin.com/in/shuhei-shagawa-173baa140/" target="_blank">
           <i class="fab fa-linkedin-in">
           </i>
         </a>
-        <a href="">
+        <a href="https://codepen.io/dashboard/" target="_blank">
           <i class="fab fa-codepen">
           </i>
         </a>
@@ -401,10 +401,14 @@
           if (top > about) {
             console.log('about');
             $('#about .container').removeClass("opacity");
-            $('.fa').css({ color: 'black' });
+            $('.fa').css({
+              color: 'black'
+            });
           } else {
             $('#about .container').addClass("opacity");
-            $('.fa').css({ color: 'white' });
+            $('.fa').css({
+              color: 'white'
+            });
           }
           if (top > skill) {
             console.log('skills');
@@ -446,7 +450,10 @@
           var href = $(this).attr('href');
           var target = $(href == "#" || href == "" ? 'html' : href);
           var position = target.offset().top;
-          $('body,html').animate({ scrollTop: position }, speed, 'swing');
+          $('.nav').fadeOut(800);
+          $('body,html').animate({
+            scrollTop: position
+          }, speed, 'swing');
           return false;
         });
 
