@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/css/desktop.css">
   <link rel="icon" type="image/x-icon" href="assets/img/fa.png">
   <!-- script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="assets/js/animsition.min.js"></script>
   <script src="assets/js/main.js" type="text/javascript"></script>
@@ -37,7 +38,11 @@
         <a href="index.html">
           <img class="logo" src="assets/img/logo.svg" alt="">
         </a>
-        <i id="humBtn" class="fas fa-bars">
+        <div id="humBtn">
+          <span class="humb"></span>
+          <span class="humb"></span>
+          <span class="humb"></span>
+        </div>
         </i>
       </div>
       <div class="nav">
@@ -147,7 +152,7 @@
             <a href="project_03.html">
               <div class="overlay change-border01__inner purple">
                 <div class="mask">
-                  <h4>Vision Web
+                  <h4>WordPress Original Theme
                   </h4>
                   <p>Website
                   </p>
@@ -432,20 +437,21 @@
         });
 
         // nav
-        $('#humBtn').on('click', function () {
-          $(this).parent()
-            .siblings('.nav')
-            .slideToggle();
-          console.log('hello');
+        // $('#humBtn').on('click', function () {
+        //   $(this).parent()
+        //     .siblings('.nav')
+        //     .slideToggle();
+        //   console.log('hello');
 
-          // 色変え
-          // var top = $(this).scrollTop();
-          // var winAbout = $("#about").scrollTop();
-          // $(this).css("color", "white");
-        });
+        // 色変え
+        // var top = $(this).scrollTop();
+        // var winAbout = $("#about").scrollTop();
+        // $(this).css("color", "white");
+        // });
 
         // menu
         $('a[href^="#"]').click(function () {
+          menuToggle.reversed() ? menuToggle.restart() : menuToggle.reverse();
           var speed = 400;
           var href = $(this).attr('href');
           var target = $(href == "#" || href == "" ? 'html' : href);
@@ -465,6 +471,37 @@
         });
 
       });
+
+      // humbNav with GASP
+      var humBtn = document.getElementById("humBtn");
+      var humbs = document.getElementsByClassName("humb");
+      var nav = document.getElementsByClassName("nav");
+
+      var menuToggle = new TimelineMax({
+        paused: true,
+        reversed: true
+      });
+      menuToggle
+        .staggerTo(humbs, .2, {
+          cycle: {
+            transformOrigin: ["52%", "52%"],
+            scale: [1, .1, 1],
+            y: [15, 0, -15],
+            rotation: [45, 0, -45],
+            // display: ["block", "none", "block"]
+          }
+        })
+        .fromTo(nav, .7, {
+          display: "none",
+          left: "100%",
+        }, {
+          display: "block",
+          left: 0,
+          ease: Power4.easeOut,
+        });
+      humBtn.onclick = () => {
+        menuToggle.reversed() ? menuToggle.restart() : menuToggle.reverse();
+      }
     </script>
   </body>
 
