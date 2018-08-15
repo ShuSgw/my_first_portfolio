@@ -145,6 +145,7 @@ header::before {
   width: 90%;
   margin: 0 auto;
   padding: 15px 0;
+  position: relative;
 }
 
 .topOverRap {
@@ -784,10 +785,13 @@ footer p {
 
 #humBtn {
   width: 50px;
-  height: 50px;
+  height: 33px;
   position: relative;
   float: right;
   cursor: pointer;
+  position: absolute;
+  top: 26%;
+  right: 0;
 }
 
 #humBtn span {
