@@ -9,7 +9,10 @@
   <meta name="author" content="Shuhei Shagawa">
   <link rel="stylesheet" type="text/css" href="assets/css/animatioon_css/animsition.css">
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+  <!-- clear cash -->
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css?2018-08-20">
+
   <link rel="stylesheet" type="text/css" href="assets/css/tablet.css">
   <link rel="stylesheet" href="assets/css/desktop.css">
   <link rel="icon" type="image/x-icon" href="assets/img/fa.png">
@@ -405,6 +408,13 @@
         });
 
         //drop shadow animation in header
+
+        var rXP = 300;
+        var rYP = 300;
+        $('.hoverAni').css('text-shadow', rYP / 8 + 'px ' + rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 +
+          'px ' + rYP / 12 +
+          'px rgba(0,159,227,.3)');
+
         $('header').mousemove(function (e) {
           var rXP = (e.pageX - this.offsetLeft - $(this).width() / 2);
           var rYP = (e.pageY - this.offsetTop - $(this).height() / 2);
@@ -499,11 +509,16 @@
           return false;
         });
 
+
         //mask on works
         $('.overlay').hover(function () {
-          $(this).find('.mask').fadeIn(300);
+          $(this).find('.mask').fadeIn(300, function (e) {
+            $(".mask").stop(false, true);
+          });
         }, function () {
-          $(this).find('.mask').fadeOut(300);
+          $(this).find('.mask').fadeOut(300, function (e) {
+            $(".mask").stop(false, true);
+          });
         });
 
       });
