@@ -125,14 +125,18 @@ header {
   background-position: 55% top;
   position: relative;
   background-attachment: fixed;
-  background-image: url('../img/header.jpg');
+  /* background: rgb(17, 60, 81); */
+  background: white;
+  /* background-image: url('../img/header.jpg'); */
 }
 
-header::before {
-  /* 透過した黒を重ねる */
-  /* 240,248,255 */
+.header_project h1 {
+  text-align: left;
+  animation: show 3s;
+}
+
+.header_project::before {
   background-color: rgba(0, 0, 0, .4);
-  /* どの範囲に重ねるかを指定 */
   position: absolute;
   top: 0;
   right: 0;
@@ -231,16 +235,16 @@ h1,
 h2 {
   position: relative;
   color: white;
-  animation: show 3s;
+  text-align: center;
 }
 
 h1 {
-  font-size: 4.5em;
+  font-size: 7em;
 }
 
 h2 {
   font-size: 2em;
-  line-height: 1.5em;
+  padding-top: 3em;
 }
 
 .fa-angle-down {
@@ -463,7 +467,7 @@ a {
 }
 
 .prof {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   display: block;
   margin: 0 auto;
   margin-bottom: 1.2em;
@@ -817,4 +821,29 @@ footer p {
 
 #humBtn span:nth-child(3) {
   top: 28px;
+}
+
+.lines {
+  height: 300px;
+  position: absolute;
+  background: black;
+}
+
+.lines:nth-of-type(1) {
+  top: 0;
+  /* width: 10px; */
+  height: 50%;
+}
+
+.lines:nth-of-type(2) {
+  top: 0;
+  width: 50%;
+  height: 0;
+  right: 0;
+}
+
+.lines:nth-of-type(3) {
+  bottom: 0;
+  right: 0;
+  height: 50%;
 }

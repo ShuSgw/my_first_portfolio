@@ -34,6 +34,11 @@
     <span id="top_link">
     </span>
     <header>
+      <div class="lines"></div>
+      <div class="lines"></div>
+      <div class="lines"></div>
+      <div class="lines"></div>
+      <div class="lines"></div>
       <div class="header_box fixed topOverRap">
         <a href="index.html">
           <img class="logo" src="assets/img/logo.svg" alt="">
@@ -74,10 +79,12 @@
           </li>
         </ul>
       </div>
-      <div class="header_box">
-        <h1>SHUHEI SHAGAWA
+      <div class="header_box title">
+        <h1 class="hoverAni">
+          <div>SHUHEI</div>
+          <div>SHAGAWA</div>
         </h1>
-        <h2>Front End Developers Based in Vancouver
+        <h2>Front End Developer Based in Vancouver
         </h2>
       </div>
       <i class="fas fa-angle-down">
@@ -377,6 +384,35 @@
 
     <script>
       $(function () {
+        // Header Animation with GASP
+        const aniSpeed = .4;
+        var lines = document.getElementsByClassName("lines");
+        var title = $('.title');
+        var tl = new TimelineLite();
+        tl.to(lines[0], aniSpeed, {
+          width: "100%",
+        });
+        tl.to(lines[1], aniSpeed, {
+          height: "100%",
+        });
+        tl.to(lines[2], aniSpeed, {
+          width: "100%",
+        });
+        tl.fromTo(title, 1, {
+          autoAlpha: 0
+        }, {
+          autoAlpha: 1,
+        });
+
+        //drop shadow animation in header
+        $('header').mousemove(function (e) {
+          var rXP = (e.pageX - this.offsetLeft - $(this).width() / 2);
+          var rYP = (e.pageY - this.offsetTop - $(this).height() / 2);
+          $('.hoverAni').css('text-shadow', rYP / 8 +
+            'px ' +
+            rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.3)');
+        });
+
 
         $(window).scroll(function () {
           var top = $(this).scrollTop();
