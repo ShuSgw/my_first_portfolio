@@ -43,6 +43,7 @@ ul {
   0% {
     transform: translate(50%, 0%);
   }
+
   100% {
     transform: translate(50%, -30%);
   }
@@ -53,6 +54,7 @@ ul {
     opacity: 0;
     transform: translate(50%, 0%);
   }
+
   100% {
     opacity: 1;
   }
